@@ -1,6 +1,6 @@
 function save() {
     for (let i = 1; i < 49; i++){
-        // Cookieに保存
+        // Cookieに保存・一年間
         document.cookie = 'zoom_' + i + '=' + encodeURIComponent(document.getElementById('num_' + i).value) + '; max-age=31536000';
     };
 };
@@ -15,7 +15,7 @@ function cookie() {
     };
     return obj;
 };
-// Cookieに保存した値の表示
+// Cookieに保存した値の表示・表示画面
 function display() {
     let obj = cookie();
     for (let i = 1; i < 49; i++){
@@ -28,9 +28,10 @@ function display() {
         };
     };
     // 表示切り替え
-    document.getElementById("table_1").style.display ="block";
-    document.getElementById("table_2").style.display ="none";
+    document.getElementById("table_1").style.display = "block";
+    document.getElementById("table_2").style.display = "none";
 };
+// Cookieに保存した値の表示・編集画面
 function display2() {
     let obj = cookie();
     for (let i = 1; i < 49; i++){
@@ -39,8 +40,8 @@ function display2() {
         };
     };
     // 表示切り替え
-    document.getElementById("table_1").style.display ="none";
-    document.getElementById("table_2").style.display ="block";
+    document.getElementById("table_1").style.display = "none";
+    document.getElementById("table_2").style.display = "block";
 };
 // 読み込み時に実行
 window.onload = function() {
