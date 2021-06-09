@@ -1,7 +1,7 @@
 function save() {
     for (let i = 1; i < 49; i++){
         // Cookieに保存
-        document.cookie = 'zoom_' + i + '=' + encodeURIComponent(document.getElementById('num_' + i).value);
+        document.cookie = 'zoom_' + i + '=' + encodeURIComponent(document.getElementById('num_' + i).value) + '; max-age=365';
     };
 };
 function cookie() {
