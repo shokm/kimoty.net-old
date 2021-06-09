@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title>kimoty.net</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+    <script src="https://unpkg.com/ityped@1.0.3"></script>
+    <style>
+        @import url('https://use.fontawesome.com/releases/v5.1.0/css/all.css');
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap');
+        @media screen and (max-width:480px) { 
+            /* 画面サイズが480pxまではここを読み込む */
+            .innner {
+                width:  100%;
+            }
+            .navbar{
+                display: none;
+            }
+            #navbar {
+            position: absolute;
+            z-index: 100;
+            width: 20%;
+            font-size: 1.5em;
+            line-height: 1.7em;
+            margin: 4%;
+            }
+        }
+        @media screen and (min-width:481px) {
+            /* 画面サイズが481pxからはここを読み込む */
+            .innner {
+                width:  75%;
+            }
+            #navbar {
+            position: fixed;
+            z-index: 100;
+            width: 20%;
+            font-size: 1.5em;
+            line-height: 1.7em;
+            margin: 4%;
+            }
+        }
+
+        body {
+            margin: 0%;
+        }
+
+        #navbar a {
+            color: #333333;
+        }
+        #contents {
+            height: auto;
+        }
+        #box1 {
+            text-align: center;
+            height: 100vh;
+            width: 100%;
+            background-color: #D95555;
+        }
+        #box2 {
+            width: 100%;
+            background-color: #F28444;
+        }
+        #box3 {
+            width: 100%;
+            background-color: #F2A341;
+        }
+        #box4 {
+            width: 100%;
+            background-color: #03A6A6;
+        }
+        #box5 {
+            width: 100%;
+            background-color: #592E3E;
+        }
+        .innner1 {
+            height: 100vh;
+            /* background-color: rgba(255, 255, 255, 0.507); */
+        }
+        .innner {
+            margin-right: 0;
+            margin-left: auto;
+        }
+        .padding {
+            padding: 2em 1em;
+        }
+        .padding-left {
+            padding-left: 1em;
+        }
+        .fredoka_one {
+            font-family: 'Fredoka One', cursive;
+        }
+        .quicksand {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .kiwi_maru {
+            font-family: 'Kiwi Maru', serif;
+        } 
+        .text {
+            line-height: 1.8em;
+        }
+        /* ityped */
+        .ityped-cursor {
+            font-size: 1em;
+            opacity: 1;
+            -webkit-animation: blink 0.3s infinite;
+            -moz-animation: blink 0.3s infinite;
+            animation: blink 0.3s infinite;
+            animation-direction: alternate;
+        }
+        @keyframes blink {
+            100% {
+                opacity: 0;
+            }
+        }
+        @-webkit-keyframes blink {
+            100% {
+                opacity: 0;
+            }
+        }
+        @-moz-keyframes blink {
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar" style="padding-left: 0;">
+        <div>
+            <h1 class="fredoka_one">kimoty.net</h1>
+            <p class="fredoka_one navbar">
+                <a href="#box1" uk-scroll>TOP</a><br>
+                <a href="#box2" uk-scroll>ABOUT</a><br>
+                <a href="#box3" uk-scroll>SKILLS</a><br>
+                <a href="#box4" uk-scroll>CREATED</a>
+            </p>
+        </div>
+    </div>
+    <div id="contents">
+        <div id="box1">
+            <div class="innner1" style="padding: 10% 0;">
+                <h2 class="quicksand" style="color: white; font-size: 3em; margin-top: 20vh;"><span id="ityped" class="ityped"></span></h2>
+                　　<script>
+                        ityped.init(document.querySelector("#ityped"), {
+                            strings: ['kimoty.net', 'Hello World!'],
+                            typeSpeed: 200,
+                           backSpeed: 80,
+                            startDelay: 500
+                        })
+                    </script>
+                <br>
+                <a class="uk-button uk-button-primary" href="#box2" style="margin-top: 10vh;" uk-scroll>kimotyって誰？</a>
+            </div>
+        </div>
+        <div id="box2">
+            <div class="innner">
+                <div class="padding" uk-scrollspy="target: > h2; cls: uk-animation-slide-left-medium; delay: 100">
+                    
+                    <h2 class="quicksand">About</h2>
+                    <div class="padding-left" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
+                        <div class="kiwi_maru uk-card uk-card-default uk-card-body">
+                            <h3><i class="fas fa-user"></i> 自己紹介</h3>
+                            <p class="text">
+                                はじめまして！kimotyです。<br>
+                                東京都出身です。<br>
+                                高校では写真部に所属していました。<br>
+                                趣味はピアノと本を読むこととパソコンをいじることです。<br>
+                                音楽では、渋谷系とアニソンが好きです。ピチカート・ファイヴやCymbalsを聴いています。<br>
+                                作曲家では主にMONACAの神前暁さんや田中秀和さんを推しています。ササキトモコさんとかも好きです。<br>
+                                よろしくお願いします。<br>                                
+                            </p>
+                            <p>
+                                <i class="fab fa-twitter-square"></i> <a href="https://twitter.com/kirnoty">@kirnoty</a> |
+                                <!--<i class="fab fa-github-square"></i> <a href="https://github.com/kirnoty">Github</a> | -->
+                                <i class="fas fa-envelope-square"></i> sho<i class="fas fa-at"></i>kimoto.net
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box3">
+            <div class="innner" >
+                <div class="padding" uk-scrollspy="target: > h2; cls: uk-animation-slide-left-medium; delay: 100">
+                    <h2 class="quicksand">Skills</h2>
+                    <div class="kiwi_maru padding-left uk-child-width-1-2@m uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150" uk-grid>
+                        <div>
+                            <div class="uk-card-small uk-card-default uk-card-body">
+                                <h3 class="uk-card-title"><i class="fas fa-code"></i> プログラミング</h3>
+                                <p>HTMLとCSSが書けます。JavaScriptを勉強中です。</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card-small uk-card-default uk-card-body" uk-lightbox>
+                                <h3 class="uk-card-title"><i class="fas fa-music"></i> 音楽</h3>
+                                <p>ピアノを弾きます。最近DTMを始めました。</p>
+                                <!--
+                                    <a href="" data-caption="YouTube" class="uk-button uk-button-text">>> 作品を見る</a>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div id="box4">
+            <div class="innner">
+                <div class="padding" uk-scrollspy="target: > h2; cls: uk-animation-slide-left-medium; delay: 100">
+                    <h2 class="quicksand">Created</h2>
+                    <div class="padding-left" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
+                        <div class="kiwi_maru uk-card uk-card-default uk-card-body">
+                            <h3>作ったもの</h3>
+                            <p class="text">準備中です…</p>           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box5" class="uk-light" style="text-align: right;">
+            <small>Designed by kimoty © 2020 kimoty.net</small>
+        </div>
+    </div>
+</body>
+</html>
