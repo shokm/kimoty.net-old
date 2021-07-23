@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>kimoty.net</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kiwi+Maru&family=Quicksand&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
     <script src="https://unpkg.com/ityped@1.0.3"></script>
 </head>
@@ -23,29 +25,31 @@
         </div>
     </div>
     <div id="contents">
-        <div id="box1">
+        <div id="box1" class="backGround">
+                <div class="bgImg img01"></div>
+                <div class="bgImg img02"></div>
+                <div class="bgImg img03"></div>
+                <div class="bgImg img04"></div>
             <div class="innner1" style="padding: 10% 0;">
                 <h2 class="quicksand" style="color: white; font-size: 3em; margin-top: 20vh;"><span id="ityped" class="ityped"></span></h2>
                 <script>ityped.init(document.querySelector("#ityped"),{strings:["kimoty.net","Hello World!"],typeSpeed:200,backSpeed:80,startDelay:500});</script>
                 <br>
-                <a class="uk-button uk-button-primary" href="#box2" style="margin-top: 10vh;" uk-scroll>kimotyって？</a>
+                <a class="uk-button uk-button-primary" href="#box2" style="margin-top: 10vh;" uk-scroll>kimoty.netって？</a>
             </div>
         </div>
         <div id="box2">
             <div class="innner">
                 <div class="padding" uk-scrollspy="target: > h2; cls: uk-animation-slide-left-medium; delay: 100">
                     <h2 class="quicksand">About</h2>
-                    <div class="padding-left" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
+                    <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
                         <div class="kiwi_maru uk-card uk-card-default uk-card-body">
                             <h3><i class="fas fa-user"></i> 自己紹介</h3>
                             <p class="text">
-                                はじめまして！kimotyです。<br>
-                                東京都出身です。<br>
+                                はじめまして！<br>
                                 高校では写真部に所属していました。<br>
                                 趣味はピアノと本を読むこととパソコンをいじることです。<br>
-                                音楽では、渋谷系とアニソンが好きです。ピチカート・ファイヴやCymbalsを聴いています。<br>
-                                作曲家では主にMONACAの神前暁さんや田中秀和さんを推しています。ササキトモコさんも好きです。<br>
-                                よろしくお願いします。<br>                                
+                                音楽では、渋谷系とアニソンが好きです。<br>
+                                よろしくお願いします。
                             </p>
                             <p>
                                 <i class="fab fa-twitter-square"></i> <a href="https://twitter.com/kirnoty">Twitter</a> |
@@ -61,7 +65,7 @@
             <div class="innner" >
                 <div class="padding" uk-scrollspy="target: > h2; cls: uk-animation-slide-left-medium; delay: 100">
                     <h2 class="quicksand">Skills</h2>
-                    <div class="kiwi_maru padding-left uk-child-width-1-2@m uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150" uk-grid>
+                    <div class="kiwi_maru uk-child-width-1-2@m uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150" uk-grid>
                         <div>
                             <div class="uk-card-small uk-card-default uk-card-body">
                                 <h3 class="uk-card-title"><i class="fas fa-code"></i> プログラミング</h3>
@@ -82,19 +86,19 @@
             <div class="innner">
                 <div class="padding" uk-scrollspy="target: > h2; cls: uk-animation-slide-left-medium; delay: 100">
                     <h2 class="quicksand">Created</h2>
-                    <div class="padding-left" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
+                    <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
                         <div class="kiwi_maru uk-card uk-card-default uk-card-body">
-                            <h3>作ったもの</h3>
+                            <h3><i class="fas fa-hammer"></i> 作ったもの</h3>
                             <ul>
                                 <li><a href="./tools/zoom/">zoom情報を保存するjs</a></li>
-                            </ul>        
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div id="box5" class="uk-light" style="text-align: right;">
-            <small>Designed by kimoty © 2020 kimoty.net</small>
+            <small>© 2020 kimoty.net</small>
         </div>
     </div>
 </body>
