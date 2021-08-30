@@ -1,8 +1,16 @@
 {
   "redirects": [
     {
-      "source": "/tools:slug*",
-      "destination": "https://kimoty.net/tools:slug*"
+      "source": "/tools/:slug*",
+      "destination": "https://kimoty.net/tools/:slug*"
+    }
+    {
+      "source": "/tools/zoom/",
+      "destination": "https://kimoty.net/tools/zoom/"
+    }
+    {
+      "source": "/tools/TCU-LogoGenerator/",
+      "destination": "https://kimoty.net/tools/TCU-LogoGenerator/"
     }
   ]
 }
