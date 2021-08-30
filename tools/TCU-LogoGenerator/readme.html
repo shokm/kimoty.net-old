@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>TCUロゴ風画像ジェネレーター 使用方法</title>
+</head>
+<body>
+    <h1>TCUロゴ風画像ジェネレーター</h1>
+    <h2>リンク</h2>
+    <p>
+        <a href="./">TCUロゴ風画像ジェネレーター</a>
+    </p>
+    <h2>操作方法</h2>
+    <h3>基本</h3>
+    <p>
+        テキストボックスに画像の中に入れたい言葉を入れて「作成！」ボタンを押すと、画像が生成されます。<br>
+        生成した画像は、ページ下部の「履歴」欄に一覧で表示され、後から確認や編集をすることができます。<br>
+        localStorageを使用しているので、ページを閉じても履歴が消えることはありません。
+    </p>
+    <h3>応用</h3>
+    <p>
+        GETパラメータでテキストボックスの値を指定することもできます。<br>
+        例えば「武蔵工業大学（Musashi Institute of Technology）」という画像を生成するとします。<br>
+        その場合、URLの末尾に「?univName=武蔵工業大学&univNameEng=Musa...gy&univColor=00a7eb」を付け加えることで、
+        指定された値の画像が生成された状態で<a href="./?univName=%E6%AD%A6%E8%94%B5%E5%B7%A5%E6%A5%AD%E5%A4%A7%E5%AD%A6&univNameEng=Musashi%20Institute%20of%20Technology&univColor=00a7eb">このように</a>ページが開きます。<br>
+        なお、GETパラメータが未設定の場合には初期値として「東京都市大学（TOKYO CITY UNIVERSITY）」が入力されます。
+    </p>
+        <table>
+            <caption>GETパラメータに設定できる値</caption>
+            <tbody>
+                <tr>
+                    <td>univName</td>
+                    <td>画像に入れる文字（日本語部分）</td>
+                </tr>
+                <tr>
+                    <td>univNameEng</td>
+                    <td>画像に入れる文字（英語部分）</td>
+                </tr>
+                <tr>
+                    <td>univColor</td>
+                    <td>ロゴの色（#を除いたカラーコード）</td>
+                </tr>
+            </tbody>
+        </table>
+    <h2>参考</h2>
+    <p>
+        「Canvas API - Web API | MDN」<a href="https://developer.mozilla.org/ja/docs/Web/API/Canvas_API">https://developer.mozilla.org/ja/docs/Web/API/Canvas_API</a><br>
+        「Window.localStorage - Web API | MDN」<a href="https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage">https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage</a><br>
+        「URL.searchParams - Web API | MDN」<a href="https://developer.mozilla.org/ja/docs/Web/API/URL/searchParams">https://developer.mozilla.org/ja/docs/Web/API/URL/searchParams</a><br>
+        「History.pushState() - Web API | MDN」<a href="https://developer.mozilla.org/ja/docs/Web/API/History/pushState">https://developer.mozilla.org/ja/docs/Web/API/History/pushState</a><br>
+    </p>
+</body>
+</html>

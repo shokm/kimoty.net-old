@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="https://kimoty.net/tools/TCU-LogoGenerator/">
+    <meta property="og:title" content="TCUロゴジェネレーター">
+    <meta property="og:description" content="TCUロゴ風の画像を作成できるウェブサイト">
+    <meta property="og:image" content="./canvas.jpeg">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>TCUロゴ風画像ジェネレーター</title>
+</head>
+<body>
+    <div id="contents">
+        <h1 class="textCenter">TCUロゴ風画像ジェネレーター</h1>
+        <p class="textCenter">使用方法: <a href="./readme.html" target="_blank">./readme.html</a></p>
+        <canvas id="logoGenerator" width="500" height="200"></canvas>
+        <h3>設定</h3>
+        日本語部分: <input type="text" size="30" value="東京都市大学" id="univName_id"><br>
+        英語部分: <input type="text" size="30" value="TOKYO CITY UNIVERSITY" id="univNameEng_id"><br>
+        カラーコード: #<input type="text" size="30" value="00a7eb" id="univColor_id"><br>
+        <input type='button' value='作成！' onclick='clickButton();'>
+        <h4>作成した画像を共有</h4>
+        <script>shareButton();</script>
+        <h3>履歴</h3>
+        <input type='button' value='履歴を全削除' onclick='clearHistory();'>
+    </div>
+    <div id="history">
+        <div id="dispHistory"></div>
+    </div>
+</body>
+</html>

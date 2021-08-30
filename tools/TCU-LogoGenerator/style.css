@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Source+Code+Pro&display=swap');
+body {
+    background: #FFFFFF;
+    color: #333333;
+    margin-left: 1%;
+}
+table , td, th {
+    border: 1px solid #333333;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 3px;
+}
+#contents {
+    margin: 0 auto;
+    padding: 0 1%;
+    width: 500px;
+}
+#history {
+    margin: 0 auto;
+    width: 80%;
+}
+.KiwiMaru {
+    font-family: 'Kiwi Maru', serif;
+}
+.SourceCodePro {
+    font-family: 'Source Code Pro', monospace;
+}
+.textCenter {
+    text-align: center;
+}
+.drawHistory {
+    float: left;
+    width: 200px;
+}
