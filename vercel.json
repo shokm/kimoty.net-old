@@ -1,7 +1,5 @@
 {
-  "trailingSlash": false
-},
-{
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/tools/:slug*",
