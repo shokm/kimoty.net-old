@@ -40,8 +40,6 @@ function clickButton() {
     /* GETパラメータをURLに追加 */
     history.pushState('','','?univName=' + univName + '&univNameEng=' + univNameEng + '&univColor=' + univColor);
 
-    window.location.reload();
-
     drawImage();
 
     /* localStorageに配列を保存する処理 */
@@ -68,10 +66,6 @@ function drawImage() {
     ctx.fillText(univNameEng, 151, 128, 290); // 英字部分の内容を変数univNameから読み込む
 
     imageBase64 = canvas.toDataURL("image/png"); // 画像をbase64化して変数imageBase64に入れる
-}
-
-/** localStorageに保存した情報をHTMLとして書き出す処理 **/
-function drawHTML() {
 
     /* Canvasにフォントが読み込まれないことがあるため、一秒後に再描写 */
     if (document.cookie < 1){ // 1以下の場合なので次回以降は2が設定されリロードしない
@@ -81,7 +75,10 @@ function drawHTML() {
             }, 1000); // 1000ミリ秒（1秒後）
         document.cookie = 100 + '; max-age=2'; // Cookieに100を設定、2秒後に破棄
     }
+}
 
+/** localStorageに保存した情報をHTMLとして書き出す処理 **/
+function drawHTML() {
     /* localStorageの保存数の回数繰り返す */
     while (i < localStorage.length) {
         /* localStorageに関する処理 */
@@ -108,10 +105,4 @@ function drawHTML() {
 function clearHistory() {
     window.localStorage.clear(); // localStorageを全削除
     window.location.reload(); // ページをリロード
-}
-
-/** Twitter共有ボタン **/
-function shareButton() {
-    let univNameShare = document.getElementById('univName_id').value;
-    document.write('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-text="'+ univNameShare + 'を生成したよ！' +'">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>');
 }
