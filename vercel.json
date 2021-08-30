@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/tools/:path*",
-      "destination": "https://kimoty.net/tools/:path*"
+      "source": "/tools/:slug*",
+      "destination": "https://kimoty.net/tools/:slug*"
     }
   ]
 }
