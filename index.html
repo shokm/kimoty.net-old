@@ -55,8 +55,8 @@
                                 .then(response => {return(response.json())})
                                 .then(json => {
                                         document.getElementById('selfintro').innerHTML = json.text;
-                                        document.getElementById('twitter').href = json.github;
-                                        document.getElementById('github').href = json.twitter;
+                                        document.getElementById('twitter').href = json.twitter;
+                                        document.getElementById('github').href = json.github;
                                 });
                             </script>
                         </div>
@@ -101,7 +101,7 @@
                                 .then(data => {
                                     for (let i = 0; i < Object.keys(data.contents).length; i++) {
                                         let json = data.contents[i];
-                                        let newElement = document.createElement('li'); // 新規にli要素を作成
+                                        let newElement = document.createElement('li');
                                         newElement.innerHTML = '<a href="' + json.url + '">' + json.title + '</a>';
                                         document.getElementById('createdContents').append(newElement);
                                     }
