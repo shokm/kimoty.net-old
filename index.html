@@ -53,13 +53,10 @@
                             <script>
                                 fetch('https://kimoto.microcms.io/api/v1/selfintro', {headers: { 'X-MICROCMS-API-KEY': config.apikey }})
                                 .then(response => {return(response.json())})
-                                .then(data => {
-                                    for (let i = 0; i < Object.keys(data.contents).length; i++) {
-                                        let json = data.contents[i];
+                                .then(json => {
                                         document.getElementById('selfintro').innerHTML = json.text;
                                         document.getElementById('twitter').href = json.github;
                                         document.getElementById('github').href = json.twitter;
-                                    }
                                 });
                             </script>
                         </div>
