@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://apikey.kimoty.net/apikey.js"></script>
     <script src="https://unpkg.com/ityped@1.0.3"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
 </head>
@@ -43,18 +44,24 @@
                     <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
                         <div class="kiwi_maru uk-card uk-card-default uk-card-body">
                             <h3><i class="fas fa-user"></i> 自己紹介</h3>
-                            <p class="text">
-                                はじめまして！<br>
-                                高校では写真部に所属していました。<br>
-                                趣味はピアノと本を読むこととパソコンをいじることです。<br>
-                                音楽では、渋谷系とアニソンが好きです。<br>
-                                よろしくお願いします。
-                            </p>
+                            <div id="selfintro" class="text"></div>
                             <p>
-                                <i class="fab fa-twitter-square"></i> <a href="https://twitter.com/kirnoty">Twitter</a> |
-                                <i class="fab fa-github-square"></i> <a href="https://github.com/shokm">Github</a>
+                                <i class="fab fa-twitter-square"></i> <a id="twitter" href="https://twitter.com/">Twitter</a> |
+                                <i class="fab fa-github-square"></i> <a id="github" href="https://github.com/">Github</a>
                                 <!-- <i class="fas fa-envelope-square"></i> admin<i class="fas fa-at"></i>example.com -->
                             </p>
+                            <script>
+                                fetch('https://kimoto.microcms.io/api/v1/selfintro', {headers: { 'X-MICROCMS-API-KEY': config.apikey }})
+                                .then(response => {return(response.json())})
+                                .then(data => {
+                                    for (let i = 0; i < Object.keys(data.contents).length; i++) {
+                                        let json = data.contents[i];
+                                        document.getElementById('selfintro').innerHTML = json.text;
+                                        document.getElementById('twitter').href = json.github;
+                                        document.getElementById('github').href = json.twitter;
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -88,10 +95,22 @@
                     <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300">
                         <div class="kiwi_maru uk-card uk-card-default uk-card-body">
                             <h3><i class="fas fa-hammer"></i> 作ったもの</h3>
-                            <ul>
-                                <li><a href="./tools/zoom/">zoom情報を保存するjs</a></li>
-                                <li><a href="./tools/TCU-LogoGenerator/">TCUロゴ風画像ジェネレーター</a></li>
+                            <ul id="createdContents">
+                                <li id="createdContentsRemove">JavaScriptをオンにしてください。</li>
                             </ul>
+                            <script>
+                                fetch('https://kimoto.microcms.io/api/v1/created', {headers: { 'X-MICROCMS-API-KEY': config.apikey }})
+                                .then(response => {return(response.json())})
+                                .then(data => {
+                                    for (let i = 0; i < Object.keys(data.contents).length; i++) {
+                                        let json = data.contents[i];
+                                        let newElement = document.createElement('li'); // 新規にli要素を作成
+                                        newElement.innerHTML = '<a href="' + json.url + '">' + json.title + '</a>';
+                                        document.getElementById('createdContents').append(newElement);
+                                    }
+                                    document.getElementById('createdContentsRemove').remove();
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
